@@ -1,7 +1,53 @@
-$font-size: 1rem;
-$font-color: lch(53 105 40);
+html, body, #root{  
+  margin: 0;
+  box-sizing: border-box;  
+}
 
-html {
-    font-size: $font-size;
-    color: $font-color;
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;  
+}
+
+.App {  
+  margin: 0 auto; 
+  font-family: 'PT Sans', sans-serif;
+}
+
+.container{
+  width: 1092px;  
+  margin: 0 auto;  
+}
+
+.slide{
+  position: relative;
+  min-width: 1092px;
+  min-height: 842px;
+  background: url('../img/background1.png') center center no-repeat;
+  background-size: cover;
+
+  h1{
+    color: white;
+    font-family: 'PT Sans Caption', sans-serif;
+  }
+}
+
+.slide__top{
+  a {
+    color: white;
+    font-weight: bold;
+  }
+  span{
+    font-size: 16px;
+  }
+}
+
+.slide__controls{
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  width: 15px;
+  height: 60px;
+  transform: translateY(-50%);
+  background: red;
 }

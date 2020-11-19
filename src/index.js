@@ -1,30 +1,45 @@
-import {test} from './test';
+import { test } from './test';
 import img from './img/1.jpg';
-import './styles/index.scss'
+import './styles/index.scss';
+import { createElement, render } from './utils';
+import logo from './img/jino.png';
 
-class Game {
-  name = 'Violin Charades'
-}
-const myGame = new Game()
+const root = document.querySelector('#root');
 
-// создаем параграф
-const p = document.createElement('p')
-p.textContent = `I like ${myGame.game}.`;
+const App = createElement(`<div class="App">
 
-const picture = document.createElement('img');
-picture.src=img;
+  <ul class="slides">
+    <li>  
+      <section class="slide slide--1">
+        <div class="container">
+          <div class="slide__top">
+            <a href="#">
+              
+              <span>домены</span>
+            </a>
+            <span>только до 31 января</span>
+          </div>
+          <h1>Честная цена за домен.ру - 39 руб.</h1>
+        
+          <form>
+            <input type="text" name="domen"/>
+            <div>
+              <span>Домен свободен</span>
+              <a href="#">Зарегистрироваться</a>
+            </div>
+            <button type="submit">Check</button>
+          </form>
 
-// создаем элемент заголовка
-const heading = document.createElement('h1')
-heading.textContent = 'Как интересно!'
+          <button>Создать аккаунт</button>
 
-// добавляем параграф и заголовок в DOM
-const root = document.querySelector('#root')
-root.append(heading, p, picture)
+          <div class="slide__controls">
 
-alert('webpack');
-test();
+          </div>
+        </div>
+      </section>
+    </li>
+    
+  </ul>
+</div>`);
 
-
-
-
+render(root, App);
