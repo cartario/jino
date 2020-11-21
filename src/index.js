@@ -15,7 +15,7 @@ import redirectSvg from './img/redirect.svg';
 const root = document.querySelector('#root');
 
 const App = createElement(`<div class="App">
-<div class="row">
+
   <div class="content">
     <div class="slider">
       <ul class="slides">
@@ -45,22 +45,7 @@ const App = createElement(`<div class="App">
             <button class="btn btn--create">Создать аккаунт</button>
           </div>
           <div class="slide__controls">
-          </div>
-
-          <div class="list">
-            <div class="col"></div>
-            <div class="col"></div>
-            <div class="col"></div>
-            <div class="col"></div>
-            <div class="col"></div>
-            <div class="col"></div>
-            <div class="col"></div>
-            <div class="col"></div>
-            <div class="col"></div>
-            <div class="col"></div>
-            <div class="col"></div>
-            <div class="col"></div>
-          </div>
+          </div>        
 
         </div>
       </section>
@@ -136,7 +121,25 @@ const App = createElement(`<div class="App">
             </div>
           </section>
         </li>
+
         <li class="slide slide--3">
+          <div class="container">
+            <div class="row">
+
+              <div class="col col-25">   1ssqsqsqsqs qsqsqsqsqsqssqsqsqsqs     
+              </div>
+
+              <div class="col col-50">   2      
+              </div>
+
+              <div class="col col-25">    3     
+              </div>           
+          
+            </div>          
+          </div>
+        </div>
+          
+          </div>
         </li>
       </ul>
       <div class="slider__controls controls">
@@ -147,7 +150,7 @@ const App = createElement(`<div class="App">
     </div>
   </div>
 
-</div>
+
   
 </div>`);
 
@@ -156,7 +159,7 @@ render(root, App);
 const slides = Array.from(document.querySelectorAll('.slide'));
 const dots = Array.from(document.querySelectorAll('.controls__dot'));
 
-showActive(1, slides, dots);
+showActive(2, slides, dots);
 // autoShowSlides(slides, dots);
 
 dots.forEach((dot, index) => {

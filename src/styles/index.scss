@@ -1,6 +1,9 @@
-html, body, #root{  
-  margin: 0;
+* {
   box-sizing: border-box;
+}
+
+html, body, #root{  
+  margin: 0;  
   background: #ffffff;
 }
 
@@ -10,16 +13,48 @@ ul {
   list-style: none;  
 }
 
+$marginGrid: 12px;
+
 .App {  
   margin: 0 auto; 
   font-family: 'PT Sans', sans-serif;
 }
 
-.row{ 
-  // height: 100vh; 
+.row{  
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap;  
+  margin: 0 #{-$marginGrid/2};
+  box-sizing: border-box;
+}
+
+.col{  
+  margin: #{$marginGrid/2};
+  padding: 10px;
+  background: cyan;  
+}
+
+.col-25{
+  width: calc(25% - #{$marginGrid});
+}
+
+.col-33{
+  width: calc(33% - #{$marginGrid});
+}
+
+.col-50{
+  width: calc(50% - #{$marginGrid});
+}
+
+.col-67{
+  width: calc(67% - #{$marginGrid});
+}
+
+.col-75{
+  width: calc(75% - #{$marginGrid});
+}
+
+.col-100{
+  width: calc(100% - #{$marginGrid});
 }
 
 .content {
@@ -117,9 +152,6 @@ ul {
   color: white;
 }
 
-
-
-
 .slide--1{  
   background: url('../img/background1.png') center center no-repeat;
   background-size: cover;
@@ -181,22 +213,6 @@ ul {
   display: flex;
   justify-content: space-between;
   display: none;
-}
-
-.col{
-  min-width: 60px;
-  max-width: 80px;
-  flex:1;
-  height: 60px;  
-  background: tomato;
-}
-
-.col{
-  margin-right: 9px;
-}
-
-.col:last-child{
-  margin-right: 0;
 }
 
 .form-wrapper{
@@ -302,19 +318,62 @@ input{
 @media (max-width: 909px){
   .container{
     background: red;
-  }
-
-  .col{
-    min-width: 0;
-    margin-right: 1px;
-  }
-  
-  .col:last-child{
-    margin-right: 0;
-  }
+  } 
 
   .features__item {
     margin-right: 9px;
+  }
+}
+
+@media(max-width: 909px){
+  $marginGrid: 9px; 
+  
+  .row{    
+    margin: 0 #{-$marginGrid/2};
+  }
+  
+  .col{  
+    margin: #{$marginGrid/2};
+    background: cyan;
+  }
+  
+  .col-25{
+    width: calc(25% - #{$marginGrid});
+  }
+  
+  .col-33{
+    width: calc(33% - #{$marginGrid});
+  }
+  
+  .col-50{
+    width: calc(50% - #{$marginGrid});
+  }
+
+  .col-67{
+    width: calc(67% - #{$marginGrid});
+  }
+  
+  .col-75{
+    width: calc(75% - #{$marginGrid});
+  }
+  
+  .col-100{
+    width: calc(100% - #{$marginGrid});
+  }
+}
+
+@media(max-width: 859px){
+  .container{
+    background: gold;
+  }
+
+  .col-25{
+    display: none;
+  }
+
+  .col-50{
+    width: calc(75% - 9px);
+    margin: 0 auto;
   }
 }
 
