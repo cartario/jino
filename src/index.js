@@ -1,15 +1,17 @@
 import { test } from './test';
 import img from './img/1.jpg';
 import './styles/index.scss';
-import { createElement, render } from './utils';
+import { createElement, render, showActive, autoShowSlides } from './utils';
 import logo from './img/jino.png';
 
 const root = document.querySelector('#root');
 
 const App = createElement(`<div class="App">
-
-  <ul class="slides">
-    <li>  
+<div class="row">
+  <div class="content">
+    <div class="slider">
+      <ul class="slides">
+      <li>  
       <section class="slide slide--1">
         <div class="container">
           <div class="slide__top">
@@ -38,8 +40,31 @@ const App = createElement(`<div class="App">
         </div>
       </section>
     </li>
-    
-  </ul>
+        <li class="slide slide--2 active">
+        </li>
+        <li class="slide slide--3">
+        </li>
+      </ul>
+      <div class="slider__controls controls">
+        <div class="controls__dot active"></div>
+        <div class="controls__dot "></div>
+        <div class="controls__dot"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+  
 </div>`);
 
 render(root, App);
+
+const slides = Array.from(document.querySelectorAll('.slide'));
+const dots = Array.from(document.querySelectorAll('.controls__dot'));
+
+showActive(0, slides, dots);
+// autoShowSlides(slides, dots);
+
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => showActive(index, slides, dots));
+});
