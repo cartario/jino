@@ -89,6 +89,37 @@ ul {
   animation-duration: 1.5s;
 }
 
+.slide__top {
+  p {
+    margin: 0;
+    margin-top: -11px;
+    padding: 0;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: white;
+  }  
+}
+
+.slide__title {
+  width: 850px;
+  margin: 0 auto;
+  margin-top: 110px;
+  margin-bottom: 59px;
+  font-family: "PT Sans Caption";
+  font-size: 80px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  letter-spacing: 0.1px;
+  color: white;
+}
+
+
+
+
 .slide--1{  
   background: url('../img/background1.png') center center no-repeat;
   background-size: cover;
@@ -107,15 +138,32 @@ ul {
   width: 90%;
   max-width: 1092px; 
   margin: 0 auto;  
+  padding-top:25px;  
+}
+
+.logo{
+  color: white;
+  text-decoration: none;
+
+  svg {
+    margin-left: -7px;
+    fill: white;
+  }
+
+  span{
+    margin-left: 6px;
+    vertical-align: text-bottom;
+  }
 }
 
 .list{
   display: flex;
   justify-content: space-between;
+  display: none;
 }
 
 .col{
-  min-width:60px;
+  min-width: 60px;
   max-width: 80px;
   flex:1;
   height: 60px;  
@@ -130,40 +178,91 @@ ul {
   margin-right: 0;
 }
 
+.form-wrapper{
+  text-align: center;
+}
+
+form {
+  position: relative;
+  width: 70%;
+  max-width: 725px;
+  margin: 0 auto;
+  background-color: rgba(51, 51, 51, 0.9);
+  border-radius: 15px;
+}
+
+input{  
+  width: 100%;
+  height: 80px;
+  margin: 0;
+  padding: 0;
+  padding-left: 25px;
+  font-size: 24px;
+  border: none;
+  border-radius: inherit;
+  box-sizing: border-box;
+}
+
+.form__footer{  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span{
+    display: block;
+    padding: 13px;
+    color: white;
+  }
+
+  a{
+    color: green;
+    
+  }
+}
+
+.btn{  
+  padding: 10px 25px;
+  font-size: 22px;
+  font-family: inherit;
+  color: white;
+  background-color: rgb(95, 96, 98);  
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &:active{
+    opacity: 0.7;
+  }
+}
+
+.btn--form{
+  position: absolute;
+  right: 15px;
+  top: 40px;
+  transform: translateY(-50%);
+}
+
+.btn--create{
+  margin-top: 35px;
+  padding: 10px 55px;
+  font-weight: bold;
+  background-color: rgb(119, 181, 60);
+}
+
+@media (max-width: 909px){
+  .container{
+    background: red;
+  }
+
+  .col{
+    min-width: 0;
+    margin-right: 1px;
+  }
+  
+  .col:last-child{
+    margin-right: 0;
+  }
+}
 
 
-
-
-
-// .slide{
-//   position: relative;
-//   min-width: 1092px;
-//   min-height: 842px;
-//   background: url('../img/background1.png') center center no-repeat;
-//   background-size: cover;
-
-//   h1{
-//     color: white;
-//     font-family: 'PT Sans Caption', sans-serif;
-//   }
-// }
-
-// .slide__top{
-//   a {
-//     color: white;
-//     font-weight: bold;
-//   }
-//   span{
-//     font-size: 16px;
-//   }
-// }
-
-// .slide__controls{
-//   position: absolute;
-//   top: 50%;
-//   right: 25px;
-//   width: 15px;
-//   height: 60px;
-//   transform: translateY(-50%);
-//   background: red;
-// }
