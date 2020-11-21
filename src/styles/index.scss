@@ -104,9 +104,34 @@ ul {
 }
 
 .container{
-  width: 1092px;  
+  width: 90%;
+  max-width: 1092px; 
   margin: 0 auto;  
 }
+
+.list{
+  display: flex;
+  justify-content: space-between;
+}
+
+.col{
+  min-width:60px;
+  max-width: 80px;
+  flex:1;
+  height: 60px;  
+  background: tomato;
+}
+
+.col{
+  margin-right: 9px;
+}
+
+.col:last-child{
+  margin-right: 0;
+}
+
+
+
 
 
 

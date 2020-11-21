@@ -37,6 +37,21 @@ const App = createElement(`<div class="App">
           <div class="slide__controls">
 
           </div>
+          <div class="list">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+          </div>
+
         </div>
       </section>
     </li>
