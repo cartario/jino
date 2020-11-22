@@ -23,6 +23,7 @@ $marginGrid: 12px;
 .row{  
   display: flex;
   flex-wrap: wrap;  
+  justify-content: center;
   margin: 0 #{-$marginGrid/2};
   box-sizing: border-box;
 }
@@ -30,7 +31,8 @@ $marginGrid: 12px;
 .col{  
   margin: #{$marginGrid/2};
   padding: 10px;
-  background: cyan;  
+  text-align: center;
+  // background: cyan;  
 }
 
 .col-25{
@@ -50,7 +52,11 @@ $marginGrid: 12px;
 }
 
 .col-75{
-  width: calc(75% - #{$marginGrid});
+  width: calc(75% - #{$marginGrid});  
+}
+
+.col-extra{
+  width: calc(100%/12*10 - #{$marginGrid});  
 }
 
 .col-100{
@@ -74,9 +80,9 @@ $marginGrid: 12px;
 .slider__controls{
   position: absolute;
   top: 50%;
-  right: 25px;
+  right: 33px;
   width: 15px;
-  height: 60px;
+  height: 75px;
   transform: translateY(-50%);  
 }
 
@@ -281,8 +287,8 @@ input{
 }
 
 .btn--create{
-  margin-top: 35px;
-  padding: 10px 55px;
+  margin-top: 14px;
+  padding: 10px 43px;
   font-weight: bold;
   background-color: rgb(119, 181, 60);
 }
@@ -313,6 +319,64 @@ input{
   text-align: left;
   background: url("../img/bubble.png") top center no-repeat;
   background-size: 100%;
+}
+
+.slide--3{
+  color: white;
+  h3 {
+    margin: 35px 0 49px 0;
+    font-size: 35px;
+    letter-spacing: 2px;
+  }
+
+  h2{
+    margin: 0;
+    font-size: 50px;
+    line-height: 1.2;
+    letter-spacing: 2px;
+  }
+}
+
+.slider__offer{ 
+  margin-top: 39px;
+  padding: 24px; 
+  border-radius: 10px;
+  background-color: rgb(223, 74, 94);
+  a{
+    color: white
+  }
+  p{
+    margin: 0;
+    padding: 0;
+    font-size: 23px;
+    text-align: left;
+  }
+  p:first-child{
+    width: 85%;
+    padding-left: 8px;
+  }
+  p:nth-child(2){
+    
+    margin-left: 21px;
+    margin-right: 14px;
+    font-size: 50px;
+  }
+  svg{
+    width: 36px;
+    height: 36px;
+    margin-top: -5px;
+    fill: white;
+  }
+}
+
+.slider__offer-wrapper{
+  display: flex;
+  align-items: center;
+}
+
+.slider__copyright{
+  margin-top: 41px;
+  font-size: 14px;
 }
 
 @media (max-width: 909px){
