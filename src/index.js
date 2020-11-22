@@ -193,9 +193,19 @@ render(root, App);
 const slides = Array.from(document.querySelectorAll('.slide'));
 const dots = Array.from(document.querySelectorAll('.controls__dot'));
 
-showActive(2, slides, dots);
+showActive(0, slides, dots);
 // autoShowSlides(slides, dots);
 
 dots.forEach((dot, index) => {
   dot.addEventListener('click', () => showActive(index, slides, dots));
 });
+
+const form = document.querySelector('form');
+const formFooter = document.querySelector('.form__footer');
+
+const handleSubmit = (e)=>{
+  e.preventDefault();
+  formFooter.setAttribute('style', 'display:inline-flex');
+};
+
+form.addEventListener('submit', handleSubmit);
