@@ -14,7 +14,7 @@ class Slide {
         </svg>
           <span>домены</span>
         </a>
-        <p>только до 31 января</p>
+        <p>только до 31 январяYep</p>
       </div>
       <h1 class="slide__title">Честная цена <br/>за домен .RU - 39 руб.</h1>
     

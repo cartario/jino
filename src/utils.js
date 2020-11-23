@@ -5,7 +5,7 @@ export const createElement = (template) => {
 };
 
 export const render = (container, component) => {
-  container.append(component);
+  container.append(component.getElement());
 };
 
 export const showActive = (index, slides, dots) => {
