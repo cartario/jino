@@ -73,7 +73,7 @@ $marginGrid: 12px;
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  // overflow: hidden;
   background: lightgrey;
 }
 
@@ -125,7 +125,7 @@ $marginGrid: 12px;
 
 .slide{
   display: none;
-  height: 842px;
+  min-height: 842px;
   animation-name: fade;
   animation-duration: 1.5s;
 }
@@ -288,21 +288,22 @@ input{
 
 .btn--create{
   margin-top: 14px;
+  margin-bottom: 15px;
   padding: 10px 43px;
   font-weight: bold;
   background-color: rgb(119, 181, 60);
 }
 
 .features {
-  display: flex;
-  width: 100%;
-  height: 147px;
+  // display: flex;
+  // width: 100%;
+  // height: 147px;
 }
 
 .features__item {
-  width: 100%;
+  // width: 100%;
   
-  margin-right: 12px;
+  // margin-right: 12px;
 
   p{
     padding: 0;
@@ -311,11 +312,12 @@ input{
 }
 
 .features__item:last-child {
-  margin: 0;
+  // margin: 0;
 }
 
 .features__bubble{  
-  padding: 30px 45px;
+  height: 200px;
+  padding: 9px;
   text-align: left;
   background: url("../img/bubble.png") top center no-repeat;
   background-size: 100%;
@@ -381,7 +383,7 @@ input{
 
 @media (max-width: 909px){
   .container{
-    background: red;
+    // background: red;
   } 
 
   .features__item {
@@ -398,11 +400,11 @@ input{
   
   .col{  
     margin: #{$marginGrid/2};
-    background: cyan;
+    // background: cyan;
   }
   
   .col-25{
-    width: calc(25% - #{$marginGrid});
+    width: calc(100% - #{$marginGrid});
   }
   
   .col-33{
@@ -428,16 +430,87 @@ input{
 
 @media(max-width: 859px){
   .container{
-    background: gold;
+    
+    
+    min-width:0;
+    // background: gold;
   }
 
   .col-25{
-    display: none;
+    // display: none;
   }
 
   .col-50{
     width: calc(75% - 9px);
     margin: 0 auto;
+  }
+
+  form {
+    width: 100%;
+  }
+  .slide__top p{
+    margin: 10px;
+  }
+
+  .slide__title {
+    width: 100%;
+    margin: 25px auto;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .btn{
+    width: 100%;
+  }
+
+  .btn--form{
+    position: initial;   
+    width: 100%;
+    transform: none;
+  }
+
+  .btn--create{
+    margin-bottom: 15px;
+  }
+
+  input{
+    height:60px;
+  }
+
+  .features__bubble{
+    height: auto;
+    border-radius: 15px;
+    background: lightgrey;
+  }
+
+  .slider{
+    overflow: scroll;
+    background: none;
+  }
+
+  .slide--3 h2 {
+    font-size: 25px;
+  }
+
+  .slider__offer-wrapper{
+    flex-direction: column;
+  }
+
+  .slider__offer p:first-child{
+    width: 100%;
+    padding: 0;
+  }
+
+  .slider__copyright{
+    text-align: center;
+  }
+
+  .slider__offer svg {
+    display: none;
+  }
+
+  .slider__offer p:nth-child(2) {
+    display: none;
   }
 }
 

@@ -65,21 +65,21 @@ const App = createElement(`<div class="App">
 
               <div class="content-wrapper">
                 <h2>Зарегистрировав у нас домен, вы получите</h2>
-                <ul class="features features-top">
-                  <li class="features__item">
+                <ul class="row features features-top">
+                  <li class="col col-25 features__item">
                     <img src=${businesscardSvg} alt="feature"/>
                     <p>Сайт-визитка</p>
                   </li>
                   
-                  <li class="features__item">
+                  <li class="col col-25 features__item">
                     <img src=${dnsSvg} alt="feature"/>
                     <p>Поддержка DNS</p>
                   </li>
-                  <li class="features__item">
+                  <li class="col col-25 features__item">
                     <img src=${certificateSvg} alt="feature"/>
                     <p>Сертификат о владении доменом</p>
                   </li>
-                  <li class="features__item">
+                  <li class="col col-25 features__item">
                     <img src=${auto} alt="feature"/>
                     <p>Автопродление</p>
                   </li>                  
@@ -95,21 +95,21 @@ const App = createElement(`<div class="App">
                   </p>
                 </div>
 
-                <ul class="features features-bottom">
-                  <li class="features__item">
+                <ul class="row features features-bottom">
+                  <li class="col col-25 features__item">
                     <img src=${cloudSvg} alt="feature"/>
                     <p>Облачное хранилище на 20 гб</p>
                   </li>
                   
-                  <li class="features__item">
+                  <li class="col col-25 features__item">
                     <img src=${freesslSvg} alt="feature"/>
                     <p>Бесплатный SSL-сертификат</p>
                   </li>
-                  <li class="features__item">
+                  <li class="col col-25 features__item">
                     <img src=${dnssecSvg} alt="feature"/>
                     <p>DNSEC в один клик</p>
                   </li>
-                  <li class="features__item">
+                  <li class="col col-25 features__item">
                     <img src=${redirectSvg} alt="feature"/>
                     <p>Перенаправление</p>
                   </li>                  
@@ -193,7 +193,7 @@ render(root, App);
 const slides = Array.from(document.querySelectorAll('.slide'));
 const dots = Array.from(document.querySelectorAll('.controls__dot'));
 
-showActive(0, slides, dots);
+showActive(2, slides, dots);
 // autoShowSlides(slides, dots);
 
 dots.forEach((dot, index) => {
@@ -202,10 +202,12 @@ dots.forEach((dot, index) => {
 
 const form = document.querySelector('form');
 const formFooter = document.querySelector('.form__footer');
+const formBtn = form.querySelector('.btn--form');
 
 const handleSubmit = (e)=>{
   e.preventDefault();
   formFooter.setAttribute('style', 'display:inline-flex');
+  formBtn.remove();
 };
 
 form.addEventListener('submit', handleSubmit);
