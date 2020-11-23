@@ -1,13 +1,8 @@
 import './styles/index.scss';
 import { createElement, render, showActive, autoShowSlides } from './utils';
-import auto from './img/autorenewal.svg';
-import dnsSvg from './img/dns.svg';
-import businesscardSvg from './img/businesscard.svg';
-import certificateSvg from './img/certificate.svg';
-import cloudSvg from './img/cloud.svg';
-import freesslSvg from './img/freessl.svg';
-import dnssecSvg from './img/dnssec.svg';
-import redirectSvg from './img/redirect.svg';
+import Feature from './components/feature';
+import Slide from './components/slide-welcome';
+import {featuresData} from './mock';
 
 const root = document.querySelector('#root');
 
@@ -62,25 +57,7 @@ const App = createElement(`<div class="App">
 
               <div class="content-wrapper">
                 <h2>Зарегистрировав у нас домен, вы получите</h2>
-                <ul class="row features features-top">
-                  <li class="col col-25 features__item">
-                    <img src=${businesscardSvg} alt="feature"/>
-                    <p>Сайт-визитка</p>
-                  </li>
-                  
-                  <li class="col col-25 features__item">
-                    <img src=${dnsSvg} alt="feature"/>
-                    <p>Поддержка DNS</p>
-                  </li>
-                  <li class="col col-25 features__item">
-                    <img src=${certificateSvg} alt="feature"/>
-                    <p>Сертификат о владении доменом</p>
-                  </li>
-                  <li class="col col-25 features__item">
-                    <img src=${auto} alt="feature"/>
-                    <p>Автопродление</p>
-                  </li>                  
-                </ul>
+                <ul class="row features features-top"></ul>
                 <div class="features__bubble">
                   <p>Для любого вашего домена, зарегистрированного 
                   на «Джино», вы можете в несколько кликов создать 
@@ -91,28 +68,7 @@ const App = createElement(`<div class="App">
                   базового варианта сайта-визитки абсолютно бесплатны.
                   </p>
                 </div>
-
-                <ul class="row features features-bottom">
-                  <li class="col col-25 features__item">
-                    <img src=${cloudSvg} alt="feature"/>
-                    <p>Облачное хранилище на 20 гб</p>
-                  </li>
-                  
-                  <li class="col col-25 features__item">
-                    <img src=${freesslSvg} alt="feature"/>
-                    <p>Бесплатный SSL-сертификат</p>
-                  </li>
-                  <li class="col col-25 features__item">
-                    <img src=${dnssecSvg} alt="feature"/>
-                    <p>DNSEC в один клик</p>
-                  </li>
-                  <li class="col col-25 features__item">
-                    <img src=${redirectSvg} alt="feature"/>
-                    <p>Перенаправление</p>
-                  </li>                  
-                </ul>
-
-
+                <ul class="row features features-bottom"></ul>
                 <button class="btn btn--create">Создать аккаунт</button>
               </div>              
             </div>
@@ -174,9 +130,9 @@ const App = createElement(`<div class="App">
         </li>
       </ul>
       <div class="slider__controls controls">
-        <div class="controls__dot active"></div>
-        <div class="controls__dot "></div>
         <div class="controls__dot"></div>
+        <div class="controls__dot "></div>
+        <div class="controls__dot"></div>       
       </div>
     </div>
   </div>  
@@ -187,7 +143,7 @@ render(root, App);
 const slides = Array.from(document.querySelectorAll('.slide'));
 const dots = Array.from(document.querySelectorAll('.controls__dot'));
 
-showActive(2, slides, dots);
+showActive(1, slides, dots);
 // autoShowSlides(slides, dots);
 
 dots.forEach((dot, index) => {
@@ -205,3 +161,19 @@ const handleSubmit = (e)=>{
 };
 
 form.addEventListener('submit', handleSubmit);
+
+const featuresTop = document.querySelector('.features-top');
+const featuresBottom = document.querySelector('.features-bottom');
+
+featuresData.slice(0,4).map((feature)=>{
+  const FeatureComponent = new Feature(feature.imgSrc, feature.text);
+  render(featuresTop, FeatureComponent.getElement());
+});
+
+featuresData.slice(4).map((feature)=>{
+  const FeatureComponent = new Feature(feature.imgSrc, feature.text);
+  render(featuresBottom, FeatureComponent.getElement());
+});
+
+const slidesContainer = document.querySelector('.slides');
+render(slidesContainer, Slide.getElement());
