@@ -10,3 +10,4 @@ const start = new Board();
 start.renderSlides();
 start.submitForm();
 start.renderFeatures();
+// start.autoShowSlides();

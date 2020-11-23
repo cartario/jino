@@ -1,4 +1,3 @@
-// import './styles/index.scss';
 import { render, showActive, autoShowSlides } from '../utils';
 import Feature from './feature';
 import SlideWelcome from './slide-welcome';
@@ -7,6 +6,11 @@ import SlideBonus from './slide-bonus';
 import { featuresData } from '../mock';
 
 class Board {
+  constructor(){
+    this.slides == null;
+    this.dots = null;
+  }
+
   renderSlides() {
     const slidesContainer = document.querySelector('.slides');
     render(slidesContainer, SlideWelcome);
@@ -17,13 +21,19 @@ class Board {
       const slides = Array.from(document.querySelectorAll('.slide'));
       const dots = Array.from(document.querySelectorAll('.controls__dot'));
 
-      showActive(1, slides, dots);
-      // autoShowSlides(slides, dots);
+      this.slides = slides;
+      this.dots = dots;
+
+      showActive(0, slides, dots);      
 
       dots.forEach((dot, index) => {
         dot.addEventListener('click', () => showActive(index, slides, dots));
       });
     }
+  }
+
+  autoShowSlides(){
+    autoShowSlides(this.slides, this.dots);   
   }
 
   submitForm() {
