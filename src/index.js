@@ -1,12 +1,9 @@
-import { test } from './test';
-import img from './img/1.jpg';
 import './styles/index.scss';
 import { createElement, render, showActive, autoShowSlides } from './utils';
 import auto from './img/autorenewal.svg';
 import dnsSvg from './img/dns.svg';
 import businesscardSvg from './img/businesscard.svg';
 import certificateSvg from './img/certificate.svg';
-
 import cloudSvg from './img/cloud.svg';
 import freesslSvg from './img/freessl.svg';
 import dnssecSvg from './img/dnssec.svg';
@@ -182,10 +179,7 @@ const App = createElement(`<div class="App">
         <div class="controls__dot"></div>
       </div>
     </div>
-  </div>
-
-
-  
+  </div>  
 </div>`);
 
 render(root, App);
