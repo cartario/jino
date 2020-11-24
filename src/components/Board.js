@@ -4,12 +4,13 @@ import SlideWelcome from './slide-welcome';
 import SlideAdvantages from './slide-advantages';
 import SlideBonus from './slide-bonus';
 import SlideTask2 from './slide-task2';
+import Upload from './upload';
 import { featuresData } from '../mock';
 
 class Board {
   constructor(){
     this.slides == null;
-    this.dots = null;
+    this.dots = null;     
   }
 
   renderSlides() {
@@ -18,7 +19,6 @@ class Board {
     render(slidesContainer, SlideAdvantages);
     render(slidesContainer, SlideBonus);
     render(slidesContainer, SlideTask2);
-
 
     if (slidesContainer) {
       const slides = Array.from(document.querySelectorAll('.slide'));
@@ -34,7 +34,17 @@ class Board {
       });
     }
 
+    const handleClickFileInput = () => {      
+      const confirmList = document.querySelector('.confirm__list');
+
+      setTimeout(()=>{
+        const uploadComponent = new Upload('Yo', Math.floor(Math.random()+0.5));     
+        render(confirmList, uploadComponent);        
+      }, 2000)       
+    }
     
+    const inputFile = document.querySelector('.upload--input');
+    inputFile.addEventListener('click', handleClickFileInput);      
   }
 
   autoShowSlides(){
@@ -68,7 +78,7 @@ class Board {
       const FeatureComponent = new Feature(feature.imgSrc, feature.text);
       render(featuresBottom, FeatureComponent);
     });
-  }
+  }  
 };
 
 export default Board;

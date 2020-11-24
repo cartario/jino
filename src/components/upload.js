@@ -8,16 +8,19 @@ class Upload {
     this.status = status;
     this.title = title || 'Загрузить скан страницы с фотографией';
     this.statusText = 'Идет проверка';
-    this.imgUrl = this.init();    
+    this.className='upload__status';
+    this.imgUrl = this.init();       
   }
 
   init(){
     switch(this.status){
       case 1:
         this.statusText = 'Проверено';
+        this.className = 'upload__status--ok';
         return okSvg;
       case 0:
         this.statusText = 'Отклонено';
+        this.className = 'upload__status--err';
         return uploadSvg;
       default :
         this.statusText = 'Идет проверка';
@@ -36,15 +39,27 @@ class Upload {
       <p class="upload__info">Размер файла не более 10МБ</p>
       
     </div>
-    <span class="upload__status">${this.statusText}</span>
+    <span class=${this.className}>${this.statusText}</span>
   </li>`)
   }
 
   getElement(){
     if(!this._element){
-      this._element = createElement(this.getTemplate());
+      this._element = createElement(this.getTemplate());      
     }
     return this._element;
+  }
+
+  rerender() {
+    const oldElement = this.getElement();
+    const parent = oldElement.parentElement;
+    this.removeElement();
+    const newElement = this.getElement();
+    parent.replaceChild(newElement, oldElement);    
+  }
+
+  removeElement() {
+    this.element = null;
   }
 };
 

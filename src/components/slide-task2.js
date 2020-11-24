@@ -9,8 +9,8 @@ class Slide {
     this.upload = this.getItem(uploadSvg,null, 'yo');
   }
   
-  getItem(imgUrl, title, status){
-    const UploadComponent = new Upload(imgUrl, title, status);
+  getItem(title, status){
+    const UploadComponent = new Upload(title, status);
     return UploadComponent.getTemplate();
   }
 
@@ -40,7 +40,7 @@ class Slide {
             <h2>Подтверждение аккаунта</h2>
             <p>Для подтверждения вашего аккаунта...</p>            
             <ul class="confirm__list">
-              <li class="confirm__upload upload">
+              <li class="confirm__upload upload upload--input">
                 <div class="upload__icon">
                   <img src=${uploadSvg} alt="uploadIcon"/>
                 </div>
@@ -48,22 +48,7 @@ class Slide {
                   <a class="upload__title" href="#">Загрузить скан страницы с фотографией</a>
                   <p class="upload__info">Размер файла не более 10МБ</p>
                 </div>
-              </li>
-              <li class="confirm__upload upload">
-                <div class="upload__icon">
-                  <img src=${uploadSvg} alt="uploadIcon"/>
-                </div>
-
-                <div class="upload__text">
-                  <p class="upload__title">Загрузить скан страницы с фотографией</p>
-                  <p class="upload__info">Размер файла не более 10МБ</p>
-                  
-                </div>
-                <span class="upload__status">Checked</span>
-              </li>
-              ${this.getItem(null, )}
-              ${this.getItem(null, 1)}
-              ${this.getItem(null, 0)}
+              </li>             
             </ul>
           </section>
         </div>
@@ -79,6 +64,7 @@ class Slide {
     return this._element;
   }
 };
+
 
 
 
