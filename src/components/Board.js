@@ -3,6 +3,7 @@ import Feature from './feature';
 import SlideWelcome from './slide-welcome';
 import SlideAdvantages from './slide-advantages';
 import SlideBonus from './slide-bonus';
+import SlideTask2 from './slide-task2';
 import { featuresData } from '../mock';
 
 class Board {
@@ -16,6 +17,8 @@ class Board {
     render(slidesContainer, SlideWelcome);
     render(slidesContainer, SlideAdvantages);
     render(slidesContainer, SlideBonus);
+    render(slidesContainer, SlideTask2);
+
 
     if (slidesContainer) {
       const slides = Array.from(document.querySelectorAll('.slide'));
@@ -24,12 +27,14 @@ class Board {
       this.slides = slides;
       this.dots = dots;
 
-      showActive(0, slides, dots);      
+      showActive(3, slides, dots);      
 
       dots.forEach((dot, index) => {
         dot.addEventListener('click', () => showActive(index, slides, dots));
       });
     }
+
+    
   }
 
   autoShowSlides(){

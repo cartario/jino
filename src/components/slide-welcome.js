@@ -19,8 +19,8 @@ class Slide {
       <h1 class="slide__title">Честная цена <br/>за домен .RU - 39 руб.</h1>
     
       <div class="form-wrapper">          
-        <form>
-          <input type="text" name="domen" placeholder="example.ru"/>
+        <form class="welcome-form">
+          <input class="welcome-input" type="text" name="domen" placeholder="example.ru"/>
           <div class="form__footer">
             <span>Домен example.ru - свободен</span>
             <a href="#">Зарегистрировать за 39 рублей</a>

@@ -10,11 +10,12 @@ class App {
       <div class="slider">
         <ul class="slides">        
         </ul>
-        <div class="slider__controls controls">
-          <div class="controls__dot"></div>
-          <div class="controls__dot "></div>
-          <div class="controls__dot"></div>       
-        </div>
+        <ul class="slider__controls controls">
+          <li class="controls__dot"></li>
+          <li class="controls__dot"></li>
+          <li class="controls__dot"></li>
+          <li class="controls__dot"></li>       
+        </ul>
       </div>
     </div>  
   </div>`)
