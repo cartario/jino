@@ -29,7 +29,7 @@ class Upload {
   }  
 
   getTemplate(){
-    return (`<li class="confirm__upload upload">
+    return (`<li class="confirm__upload upload">    
     <div class="upload__icon">
       <img src=${this.imgUrl} alt="uploadIcon"/>
     </div>

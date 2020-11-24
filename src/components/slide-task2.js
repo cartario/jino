@@ -42,12 +42,13 @@ class Slide {
             <ul class="confirm__list">
               <li class="confirm__upload upload upload--input">
                 <div class="upload__icon">
-                  <img src=${uploadSvg} alt="uploadIcon"/>
+                  <img class="upload__img" src=${uploadSvg} alt="uploadIcon"/>
                 </div>
                 <div class="upload__text">
                   <a class="upload__title" href="#">Загрузить скан страницы с фотографией</a>
                   <p class="upload__info">Размер файла не более 10МБ</p>
                 </div>
+                <input class="upload__input" type="file"/>
               </li>             
             </ul>
           </section>
