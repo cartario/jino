@@ -39,17 +39,7 @@ class Slide {
           <section class="confirm">
             <h2>Подтверждение аккаунта</h2>
             <p>Для подтверждения вашего аккаунта...</p>            
-            <ul class="confirm__list">
-              <li class="confirm__upload upload upload--input">
-                <div class="upload__icon">
-                  <img class="upload__img" src=${uploadSvg} alt="uploadIcon"/>
-                </div>
-                <div class="upload__text">
-                  <a class="upload__title" href="#">Загрузить скан страницы с фотографией</a>
-                  <p class="upload__info">Размер файла не более 10МБ</p>
-                </div>
-                <input class="upload__input" type="file"/>
-              </li>             
+            <ul class="confirm__list">                          
             </ul>
           </section>
         </div>

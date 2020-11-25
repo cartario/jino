@@ -37,3 +37,8 @@ export const autoShowSlides = (slides, dots) => {
     current++;
   }, TIMER);
 };
+
+export const getRandom = (arr)=>{
+  const random = Math.floor(Math.random() * arr.length);
+  return arr[random];
+};

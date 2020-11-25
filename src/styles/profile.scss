@@ -33,15 +33,17 @@
   p{
     margin: 0;
     padding: 0;
-  }  
+  } 
+  cursor: pointer; 
+
+  &:hover{
+    background: white;
+    border-radius: 15px;
+  }
 }
 
 .upload__input{
   display: none;
-}
-
-.upload--input{
-  border: 1px solid black;
 }
 
 .upload__icon{
@@ -73,25 +75,20 @@
 }
 
 .upload__status{
-  position: absolute;
-  right: 0;
-  top: 7px;
+  margin-top: 10px;
+  margin-left: 70px;
   font-size: 12px;
   color: grey;
 }
 
-.upload__status--ok{
-  position: absolute;
-  right: 0;
-  top: 7px;
-  font-size: 12px;
+.upload__status--ok{  
   color: rgb(35, 151, 35);
 }
 
-.upload__status--err{
-  position: absolute;
-  right: 0;
-  top: 7px;
-  font-size: 12px;
+.upload__status--err{  
   color: red;
+}
+
+.upload__title {  
+  text-decoration: underline;
 }

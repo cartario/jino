@@ -6,14 +6,6 @@ import SlideBonus from './slide-bonus';
 import SlideTask2 from './slide-task2';
 import Upload from './upload';
 import { featuresData } from '../mock';
-import uploadSvg from '../img/upload.svg';
-import waitSvg from '../img/wait.svg';
-import okSvg from '../img/ok.svg';
-
-const getRandomSvg = (arr)=>{
-  const random = Math.floor(Math.random() * arr.length);
-  return arr[random];
-}
 
 class Board {
   constructor(){
@@ -41,34 +33,11 @@ class Board {
         dot.addEventListener('click', () => showActive(index, slides, dots));
       });
     }
-
-    const inputFile = document.querySelector('.upload--input');
-    const inputFileField = document.querySelector('.upload__input');   
-
     
-    const handleFile = (file) => {
-      if (file.type === 'text/html' || file.type === 'text/css' || file.type === 'text/javascript' || file.type === 'application/pdf' ){            
-            return;
-          }   
-      //TODO - post request     
-      console.log(file);
-      const target = inputFile.querySelector('.upload__img');
-      target.setAttribute('src', 'https://pear-advert.ru/images/uploads/blog/273/30.gif');
-
-      setTimeout(()=>{
-        target.setAttribute('src', getRandomSvg([uploadSvg, waitSvg, okSvg]));
-      }, 2000)     
-    }
-
-    const handleClickFileInput = () => {      
-      inputFileField.click();
-      inputFileField.addEventListener('change', ()=>{        
-        const file = inputFileField.files[0];
-        handleFile(file);        
-      })    
-    }    
+    const uploadComponent = new Upload();    
+    render(document.querySelector('.confirm__list'), uploadComponent);
     
-    inputFile.addEventListener('click', handleClickFileInput);    
+    uploadComponent.setClickHandler();
   }
 
   autoShowSlides(){
