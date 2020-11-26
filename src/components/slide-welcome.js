@@ -1,8 +1,12 @@
 import { createElement } from "../utils";
+import {welcomeData} from "../mock";
+
+const {offerTop, offerTitle, textRegister} = welcomeData;
 
 class Slide {
   constructor(){
-    
+    this.input = null;
+    this.setSubmitForm();
   }
   getTemplate(){
     return (`<li><section class="slide slide--1">
@@ -14,26 +18,42 @@ class Slide {
         </svg>
           <span>домены</span>
         </a>
-        <p>только до 31 январяYep</p>
+        <p>${offerTop}</p>
       </div>
-      <h1 class="slide__title">Честная цена <br/>за домен .RU - 39 руб.</h1>
+      <h1 class="slide__title">${offerTitle}</h1>
     
       <div class="form-wrapper">          
         <form class="welcome-form">
           <input class="welcome-input" type="text" name="domen" placeholder="example.ru"/>
           <div class="form__footer">
-            <span>Домен example.ru - свободен</span>
-            <a href="#">Зарегистрировать за 39 рублей</a>
+            <span class="form__footer-info">Домен ${this.input} - свободен</span>
+            <a href="#">${textRegister}</a>
           </div>
           <button class="btn btn--form" type="submit">Проверить</button>
         </form>
         <button class="btn btn--create">Создать аккаунт</button>
       </div>
       <div class="slide__controls">
-      </div>        
-
+      </div>
     </div>
   </section></li>`)
+  }
+
+  setSubmitForm(){    
+    const form = this.getElement().querySelector('form');
+    const formFooter = form.querySelector('.form__footer');
+    const formInput = form.querySelector('.welcome-input');
+    const formFooterInfo = form.querySelector('.form__footer-info');    
+
+    form.addEventListener('submit', (e)=>{      
+      e.preventDefault();
+      this.input=formInput.value;      
+      form.reset();
+      formFooter.setAttribute('style', 'display:inline-flex');
+      formFooterInfo.textContent = `Домен ${this.input} свободен`;
+      const formData = new FormData();
+      formData.append('domen', this.input);      
+    })
   }
 
   getElement(){

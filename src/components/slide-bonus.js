@@ -1,14 +1,10 @@
-import { createElement } from "../utils";
+import { createElement } from '../utils';
 
 class Slide {
-  constructor(){
-    
-  }
-  getTemplate(){
-    return (`<li class="slide slide--3">
+  getTemplate() {
+    return `<li class="slide slide--3">
     <div class="container">
-      <div class="row">
-        
+      <div class="row">        
         <div class="slide__top" style="width:100% ">
           <a class="logo" href="#">
           <svg xmlns="http://www.w3.org/2000/svg" width="65" height="15" viewBox="0 0 65 15">
@@ -16,8 +12,7 @@ class Slide {
           </svg>
           <span>домены</span>
           </a>                
-        </div>
-        
+        </div>        
         <div class="col col-100">
           <h3>Почему стоит  выбрать "Джино"</h3>
         </div>
@@ -29,17 +24,15 @@ class Slide {
           и многое другое.
           </h2>
         </div>
-
         <div class="col col-25">
           <button class="btn btn--create">Создать аккаунт</button>
         </div>
-
         <div class="slider__offer col col-100">
           <div class="slider__offer-wrapper">
             <p>
-                Вы получите <b>1000 баллов</b> в системе лояльности <a href="#">Джино.Плюсы</a>,
-                зарегистрировавшись в течении <b>24 часов</b> после посещения данной страницы
-              </p>                  
+              Вы получите <b>1000 баллов</b> в системе лояльности <a href="#">Джино.Плюсы</a>,
+              зарегистрировавшись в течении <b>24 часов</b> после посещения данной страницы
+            </p>                  
             <p>1000</p>
             <svg xmlns="http://www.w3.org/2000/svg" 
             viewBox="0 0 512 512" width="50" height="50">
@@ -47,26 +40,23 @@ class Slide {
             d="M511.874 201.258l-2.316 82.488c0 7.91-8.107 16.95-16.213 16.95l-186.452 9.04-22.004 180.795c-1.158 9.04-9.265 16.95-19.687 16.95L185.294 512c-9.265 0-16.213-6.78-15.055-15.82l22.004-179.665-176.029 9.04c-9.265 0-16.213-6.78-16.213-15.82l3.474-81.358c1.158-9.04 8.107-18.08 17.371-18.08l185.294-9.04 22.004-180.795c1.158-9.04 9.265-15.82 19.687-16.95l79.908-3.39c9.265-1.13 16.213 5.65 15.055 14.69l-23.162 179.665 177.187-9.04c9.264.001 16.213 6.781 15.055 15.821z"/></svg>               
           </div>                  
         </div>
-
         <p class="slider__copyright">
         © «Джино», 2003–2017. «Джино» является зарегистрированным товарным знаком. Лицензия на телематические услуги связи № 97495 от 09.03.2012. Правовая информация.
-        </p> 
-
-      </div>          
+        </p>
+        </div>          
+        </div>
+      </div>    
     </div>
-  </div>
-    
-    </div>
-  </li>`)
+  </li>`;
   }
 
-  getElement(){
-    if(!this._element){
+  getElement() {
+    if (!this._element) {
       this._element = createElement(this.getTemplate());
     }
     return this._element;
   }
-};
+}
 
 const component = new Slide();
 export default component;

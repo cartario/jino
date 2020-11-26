@@ -1,11 +1,9 @@
-import { createElement } from "../utils";
+import { createElement } from '../utils';
+import { advantagesData } from '../mock';
 
 class Slide {
-  constructor(){
-    
-  }
-  getTemplate(){
-    return (`<li class="slide slide--2 active">
+  getTemplate() {
+    return `<li class="slide slide--2 active">
     <section>
       <div class="container">
         <div class="slide__top">
@@ -22,13 +20,7 @@ class Slide {
           <h2>Зарегистрировав у нас домен, вы получите</h2>
           <ul class="row features features-top"></ul>
           <div class="features__bubble">
-            <p>Для любого вашего домена, зарегистрированного 
-            на «Джино», вы можете в несколько кликов создать 
-            простую страницу-визитку. Это удобно, если ваш основной 
-            сайт еще не готов, или если домен вам нужен только для почты. 
-            Вы можете разместить здесь краткую информацию о себе или вашем бизнесе, 
-            ссылки на аккаунты в соцсетях и любые другие сайты. Создание и поддержка 
-            базового варианта сайта-визитки абсолютно бесплатны.
+            <p>${advantagesData.text}
             </p>
           </div>
           <ul class="row features features-bottom"></ul>
@@ -36,16 +28,16 @@ class Slide {
         </div>              
       </div>
     </section>
-  </li>`)
+  </li>`;
   }
 
-  getElement(){
-    if(!this._element){
+  getElement() {
+    if (!this._element) {
       this._element = createElement(this.getTemplate());
     }
     return this._element;
   }
-};
+}
 
 const component = new Slide();
 export default component;

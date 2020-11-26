@@ -1,24 +1,6 @@
-import { createElement, getRandom } from '../utils';
+import { createElement, getRandom} from '../utils';
+import {profileData, FILE_MAX_SIZE} from '../mock';
 import uploadSvg from '../img/upload.svg';
-import waitSvg from '../img/wait.svg';
-import okSvg from '../img/ok.svg';
-
-const FILE_MAX_SIZE = 5*1000*1000;
-
-const data = [
-  {
-    svg: okSvg,
-    status: 'Проверено',
-  },
-  {
-    svg: waitSvg,
-    status: 'Идет проверка',
-  },
-  {
-    svg: uploadSvg,
-    status: 'Отклонено',
-  },
-];
 
 class Upload {
   constructor() {
@@ -86,8 +68,9 @@ class Upload {
     status.classList.remove('upload__status--err');
     status.textContent = 'Идет проверка';
 
-    setTimeout(() => {
-      this.obj = getRandom(data);
+    setTimeout(() => {      
+      this.obj = getRandom(profileData);
+      
       img.setAttribute('src', this.obj.svg);
       status.textContent = this.obj.status;
       this.status = this.obj.status;

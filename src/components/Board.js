@@ -8,17 +8,20 @@ import Upload from './upload';
 import { featuresData } from '../mock';
 
 class Board {
-  constructor(){
+  constructor() {
     this.slides == null;
-    this.dots = null;     
+    this.dots = null;
   }
 
   renderSlides() {
     const slidesContainer = document.querySelector('.slides');
+    const uploadComponent = new Upload();
+
     render(slidesContainer, SlideWelcome);
     render(slidesContainer, SlideAdvantages);
     render(slidesContainer, SlideBonus);
     render(slidesContainer, SlideTask2);
+    render(document.querySelector('.confirm__list'), uploadComponent);
 
     if (slidesContainer) {
       const slides = Array.from(document.querySelectorAll('.slide'));
@@ -27,35 +30,18 @@ class Board {
       this.slides = slides;
       this.dots = dots;
 
-      showActive(3, slides, dots);      
+      showActive(0, slides, dots);
 
       dots.forEach((dot, index) => {
         dot.addEventListener('click', () => showActive(index, slides, dots));
       });
     }
-    
-    const uploadComponent = new Upload();    
-    render(document.querySelector('.confirm__list'), uploadComponent);
-    
+
     uploadComponent.setClickHandler();
   }
 
-  autoShowSlides(){
-    autoShowSlides(this.slides, this.dots);   
-  }
-
-  submitForm() {
-    const form = document.querySelector('form');
-    const formFooter = document.querySelector('.form__footer');
-    const formBtn = form.querySelector('.btn--form');
-
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      formFooter.setAttribute('style', 'display:inline-flex');
-      formBtn.remove();
-    };
-
-    form.addEventListener('submit', handleSubmit);
+  autoShowSlides() {
+    autoShowSlides(this.slides, this.dots);
   }
 
   renderFeatures() {
@@ -71,7 +57,7 @@ class Board {
       const FeatureComponent = new Feature(feature.imgSrc, feature.text);
       render(featuresBottom, FeatureComponent);
     });
-  }  
-};
+  }
+}
 
 export default Board;
