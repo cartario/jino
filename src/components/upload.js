@@ -3,6 +3,8 @@ import uploadSvg from '../img/upload.svg';
 import waitSvg from '../img/wait.svg';
 import okSvg from '../img/ok.svg';
 
+const FILE_MAX_SIZE = 5*1000*1000;
+
 const data = [
   {
     svg: okSvg,
@@ -28,13 +30,15 @@ class Upload {
   }
 
   getTemplate() {
-    return `<li class="confirm__upload upload">    
-    <div class="upload__icon">
-      <img class="upload__img" src=${this.imgUrl} alt="uploadIcon"/>
-    </div>
-    <div class="upload__text">
-      <p class="upload__title">${this.title}</p>
-      <p class="upload__info">Размер файла не более 10МБ</p>      
+    return `<li class="confirm__upload upload">
+    <div class="upload__wrapper">   
+      <div class="upload__icon">
+        <img class="upload__img" src=${this.imgUrl} alt="uploadIcon"/>
+      </div>
+      <div class="upload__text">
+        <p class="upload__title">${this.title}</p>
+        <p class="upload__info">Размер файла не более 5МБ</p>      
+      </div>
     </div>
     <span class="upload__status">${this.status}</span>
     <input class="upload__input" type="file"/>
@@ -65,7 +69,7 @@ class Upload {
       file.type === 'text/html' ||
       file.type === 'text/css' ||
       file.type === 'text/javascript' ||
-      file.type === 'application/pdf'
+      file.type === 'application/pdf' || file.size > FILE_MAX_SIZE
     ) {
       return;
     }
@@ -89,6 +93,7 @@ class Upload {
       this.status = this.obj.status;
       status.classList.remove('upload__status--ok');
       status.classList.remove('upload__status--err');
+      title.setAttribute('style', 'text-decoration: none');      
 
       if (this.status === 'Проверено') {
         status.classList.add('upload__status--ok');
@@ -97,6 +102,7 @@ class Upload {
       }
       if (this.status === 'Отклонено') {
         status.classList.add('upload__status--err');
+        title.setAttribute('style', 'text-decoration: underline');
       }
     }, 2000);
   }

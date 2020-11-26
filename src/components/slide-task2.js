@@ -18,27 +18,12 @@ class Slide {
     return (`<li><section class="slide slide--4">
     <div class="container">
       <div class="row">
-        <div class="col col-50">
-          <form class="profile">
-            <div class="profile__field">
-              <label>e-mail
-                <input type="text" placeholder="e-mail"/>
-              </label>
-              <a href=#>Изменить</a>
-            </div>
-            <div class="profile__field">
-              <label>Phone
-                <input type="text" placeholder="phone"/>
-              </label> 
-              <a href=#>Задать</a>                       
-            </div>
-            <p>Номер мобильного телефона для важных оповещений...</p>   
-            <button class="btn profile__btn" type="submit">Save</button>
-          </form>
-
+        <div class="col col-50">          
           <section class="confirm">
             <h2>Подтверждение аккаунта</h2>
-            <p>Для подтверждения вашего аккаунта...</p>            
+            <p>Для подтверждения вашего аккаунта
+              вам нужно заполнить все поля, подтвердить почтовый ящик и телефон, а также загрузить сканы ваших документов
+            </p>            
             <ul class="confirm__list">                          
             </ul>
           </section>
