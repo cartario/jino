@@ -1,5 +1,4 @@
-.confirm {
-  
+.confirm {  
   h2{
     text-align: left;
     margin-top: 0;
@@ -51,7 +50,7 @@
 .upload{
   position: relative;
   display: flex; 
-  justify-content: space-between;
+  justify-content: space-between;  
   margin-bottom: 15px; 
 
   p{
@@ -119,4 +118,19 @@
 
 .upload__title {  
   text-decoration: underline;
+}
+
+@media(max-width: 909px){
+  .col-50{
+    width: calc(100% - #{$marginGrid});
+  }
+
+  .upload, .confirm h2, .confirm p{
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .upload__info{
+    margin: 0;
+  }
 }
